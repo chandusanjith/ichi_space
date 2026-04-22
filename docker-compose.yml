@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ichispace}
+      POSTGRES_USER: ${POSTGRES_USER:-ichispace}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ichispace_secret}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    command: >
+      sh -c "python manage.py makemigrations users &&
+             python manage.py makemigrations notes todos tools &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DATABASE_URL=postgres://${POSTGRES_USER:-ichispace}:${POSTGRES_PASSWORD:-ichispace_secret}@db:5432/${POSTGRES_DB:-ichispace}
+      - SECRET_KEY=${DJANGO_SECRET_KEY:-django-insecure-dev-key-change-in-production}
+      - DEBUG=${DEBUG:-True}
+      - ALLOWED_HOSTS=ichispace.tech,www.ichispace.tech
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:3000,https://ichispace.tech}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=https://ichispace.tech/api
+    restart: always
+    environment:
+      - NEXT_PUBLIC_API_URL=https://ichispace.tech/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+
+volumes:
+  postgres_data:
+
