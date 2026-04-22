@@ -19,7 +19,7 @@ function Slider({
         ? [value as number]
         : [min]
 
-  const handleValueChange = (val: number | number[], event: any) => {
+  const handleValueChange = (val: number | readonly number[], event: any) => {
     const arrayVal = Array.isArray(val) ? val : [val];
     onValueChange?.(arrayVal as any, event);
   }

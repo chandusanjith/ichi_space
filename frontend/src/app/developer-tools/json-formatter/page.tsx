@@ -1,151 +1,81 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ToolLayout } from "@/components/shared/ToolLayout";
-import { Card, CardContent } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Copy, Check, Braces, Minimize2, CheckCircle2, XCircle } from "lucide-react";
+import { JsonExplorer } from "./components/JsonExplorer";
 
 export default function JSONFormatterPage() {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
+  const [rawInput, setRawInput] = useState("");
+  const [data, setData] = useState<any>(null);
   const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
-  const [indent, setIndent] = useState(2);
 
-  const format = () => {
-    try {
-      const parsed = JSON.parse(input);
-      setOutput(JSON.stringify(parsed, null, indent));
+  // Sync parsed data when raw input changes
+  useEffect(() => {
+    if (!rawInput.trim()) {
+      setData(null);
       setError("");
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Invalid JSON");
-      setOutput("");
+      return;
     }
-  };
 
-  const minify = () => {
     try {
-      const parsed = JSON.parse(input);
-      setOutput(JSON.stringify(parsed));
+      const parsed = JSON.parse(rawInput);
+      setData(parsed);
       setError("");
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Invalid JSON");
-      setOutput("");
+    } catch (e: any) {
+      setError(e.message || "Invalid JSON");
+      // Don't clear data immediately to allow fixing the typo
     }
-  };
+  }, [rawInput]);
 
-  const validate = () => {
-    try {
-      JSON.parse(input);
-      setOutput("");
-      setError("");
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Invalid JSON");
-    }
+  const handleDataChange = (newData: any) => {
+    setData(newData);
+    setRawInput(JSON.stringify(newData, null, 2));
   };
-
-  const copyToClipboard = async () => {
-    await navigator.clipboard.writeText(output);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  const isValid = (() => {
-    if (!input.trim()) return null;
-    try { JSON.parse(input); return true; } catch { return false; }
-  })();
 
   return (
     <ToolLayout
-      title="JSON Formatter"
-      description="Format, validate, and minify JSON data"
+      title="JSON Formatter & Editor"
+      description="Modern JSON explorer with Tree, Table, and Text modes. Edit and search through complex data structures effortlessly."
       categoryName="Developer Tools"
       categoryPath="/developer-tools"
     >
-      <div className="space-y-6">
-        <div className="flex flex-wrap gap-3 items-center">
-          <Button onClick={format} size="lg">
-            <Braces className="mr-2 h-4 w-4" />
-            Format
-          </Button>
-          <Button onClick={minify} variant="outline" size="lg">
-            <Minimize2 className="mr-2 h-4 w-4" />
-            Minify
-          </Button>
-          <Button onClick={validate} variant="outline" size="lg">
-            {isValid === true ? (
-              <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-500" />
-            ) : isValid === false ? (
-              <XCircle className="mr-2 h-4 w-4 text-red-500" />
-            ) : null}
-            Validate
-          </Button>
-          <div className="ml-auto flex items-center gap-2">
-            <Label className="text-sm text-muted-foreground">Indent:</Label>
-            <Tabs value={String(indent)} onValueChange={(v) => setIndent(Number(v))}>
-              <TabsList className="h-8">
-                <TabsTrigger value="2" className="text-xs px-2 h-6">2</TabsTrigger>
-                <TabsTrigger value="4" className="text-xs px-2 h-6">4</TabsTrigger>
-                <TabsTrigger value="8" className="text-xs px-2 h-6">8</TabsTrigger>
-              </TabsList>
-            </Tabs>
-          </div>
-        </div>
-
-        {isValid !== null && (
-          <div className={`flex items-center gap-2 text-sm px-4 py-2 rounded-lg ${
-            isValid 
-              ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" 
-              : "bg-red-500/10 text-red-600 dark:text-red-400"
-          }`}>
-            {isValid ? (
-              <><CheckCircle2 className="h-4 w-4" /> Valid JSON</>
-            ) : (
-              <><XCircle className="h-4 w-4" /> Invalid: {error}</>
-            )}
+      <div className="space-y-6 max-w-7xl mx-auto">
+        {error && (
+          <div className="bg-destructive/10 text-destructive text-xs py-2 px-4 rounded-lg border border-destructive/20 animate-in fade-in slide-in-from-top-1">
+            <span className="font-bold uppercase mr-2 tracking-widest text-[10px]">Syntax Error:</span>
+            {error}
           </div>
         )}
+        
+        <JsonExplorer 
+          data={data} 
+          onDataChange={handleDataChange}
+          rawInput={rawInput}
+          onRawInputChange={setRawInput}
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between mb-2">
-                <Label className="text-xs text-muted-foreground">Input</Label>
-                <span className="text-[10px] text-muted-foreground">{input.length} chars</span>
-              </div>
-              <Textarea
-                placeholder='{"key": "value", "numbers": [1, 2, 3]}'
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                className="min-h-[400px] font-mono text-sm resize-none"
-              />
-            </CardContent>
-          </Card>
-
-          <Card className="bg-muted/30">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between mb-2">
-                <Label className="text-xs text-muted-foreground">Output</Label>
-                {output && (
-                  <Button variant="ghost" size="sm" className="h-6" onClick={copyToClipboard}>
-                    {copied ? <Check className="h-3 w-3 text-emerald-500" /> : <Copy className="h-3 w-3" />}
-                  </Button>
-                )}
-              </div>
-              <Textarea
-                value={output}
-                readOnly
-                className="min-h-[400px] font-mono text-sm resize-none bg-background"
-                placeholder="Formatted JSON will appear here..."
-              />
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+          <FeatureCard 
+            title="Tree Explorer" 
+            description="Navigate deeply nested objects with ease, featuring inline editing and type-specific icons."
+          />
+          <FeatureCard 
+            title="Table View" 
+            description="Perfect for large arrays of data. Compare objects side-by-side in a structured grid."
+          />
+          <FeatureCard 
+            title="Smart Search" 
+            description="Find keys or values instantly across all nodes. Filters both tree and table views."
+          />
         </div>
       </div>
     </ToolLayout>
   );
 }
+
+const FeatureCard = ({ title, description }: { title: string, description: string }) => (
+  <div className="p-6 rounded-2xl border border-border/50 bg-muted/20 hover:bg-muted/30 transition-all hover:shadow-md group">
+    <h4 className="font-bold mb-2 group-hover:text-primary transition-colors tracking-tight">{title}</h4>
+    <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+  </div>
+);
