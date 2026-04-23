@@ -74,6 +74,7 @@ export default function RegexTesterPage() {
       description="Test regular expressions with live matching"
       categoryName="Developer Tools"
       categoryPath="/developer-tools"
+      slug="regex-tester"
     >
       <div className="space-y-6">
         <Card>

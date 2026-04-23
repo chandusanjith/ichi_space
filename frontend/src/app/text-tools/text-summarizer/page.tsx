@@ -65,6 +65,7 @@ export default function TextSummarizerPage() {
       description="Summarize long text using extractive summarization"
       categoryName="Text Tools"
       categoryPath="/text-tools"
+      slug="text-summarizer"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>

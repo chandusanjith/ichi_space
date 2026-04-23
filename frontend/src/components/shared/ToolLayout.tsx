@@ -8,12 +8,17 @@ import { ChevronRight, ArrowLeft } from "lucide-react";
 import { AdComponent } from "@/components/ads/AdComponent";
 import { Button } from "@/components/ui/button";
 
+import { tools } from "@/lib/tools-registry";
+
 interface ToolLayoutProps {
   title: string;
   description: string;
   categoryName: string;
   categoryPath: string;
   children: ReactNode;
+  about?: ReactNode;
+  faq?: Array<{ question: string; answer: string }>;
+  slug?: string;
 }
 
 export function ToolLayout({
@@ -22,8 +27,16 @@ export function ToolLayout({
   categoryName,
   categoryPath,
   children,
+  about,
+  faq,
+  slug,
 }: ToolLayoutProps) {
   const router = useRouter();
+  
+  // Auto-lookup SEO content from registry if slug is provided and local props are empty
+  const toolFromRegistry = slug ? tools.find(t => t.slug === slug) : null;
+  const finalAbout = about || toolFromRegistry?.seoAbout;
+  const finalFaq = faq || toolFromRegistry?.seoFaq;
 
   return (
     <div className="flex w-full flex-col max-w-5xl mx-auto pb-12">
@@ -63,21 +76,37 @@ export function ToolLayout({
         </div>
       </div>
 
-      {/* 
-      <div className="mb-8">
-        <AdComponent slot="top-banner" />
-      </div>
-      */}
-
       <main className="min-h-[400px]">
         {children}
       </main>
 
-      {/* 
-      <div className="mt-12">
-        <AdComponent slot="in-content" />
-      </div>
-      */}
+      {/* SEO Content Sections */}
+      {(finalAbout || (finalFaq && finalFaq.length > 0)) && (
+        <div className="mt-20 space-y-16 border-t pt-16">
+          {finalAbout && (
+            <section className="prose prose-slate dark:prose-invert max-w-none">
+              <h2 className="text-2xl font-bold mb-6">About {title}</h2>
+              <div className="text-muted-foreground leading-relaxed text-lg">
+                {finalAbout}
+              </div>
+            </section>
+          )}
+
+          {finalFaq && finalFaq.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold mb-8">Frequently Asked Questions</h2>
+              <div className="grid gap-6">
+                {finalFaq.map((item, index) => (
+                  <div key={index} className="bg-muted/30 p-6 rounded-2xl border">
+                    <h3 className="font-bold text-lg mb-2">{item.question}</h3>
+                    <p className="text-muted-foreground">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -81,6 +81,7 @@ export default function CountdownTimerPage() {
       description="Set a countdown to any future date or event"
       categoryName="Time & Date"
       categoryPath="/time-date"
+      slug="countdown-timer"
     >
       <div className="space-y-8">
         {countdown !== null && (

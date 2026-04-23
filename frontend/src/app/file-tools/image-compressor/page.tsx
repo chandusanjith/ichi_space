@@ -92,6 +92,7 @@ export default function ImageCompressorPage() {
       description="Compress images while maintaining quality"
       categoryName="File Tools"
       categoryPath="/file-tools"
+      slug="image-compressor"
     >
       <div className="space-y-8">
         <Card>

@@ -94,6 +94,7 @@ export default function GrammarCheckerPage() {
       description="Check and fix grammar mistakes in your text"
       categoryName="Text Tools"
       categoryPath="/text-tools"
+      slug="grammar-checker"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>

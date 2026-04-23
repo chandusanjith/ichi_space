@@ -35,6 +35,7 @@ export default function FuelPricePage() {
       description="Track fuel prices across Indian cities"
       categoryName="Finance"
       categoryPath="/finance"
+      slug="fuel-price"
     >
       <div className="space-y-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

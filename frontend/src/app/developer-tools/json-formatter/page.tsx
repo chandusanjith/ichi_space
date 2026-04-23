@@ -38,6 +38,39 @@ export default function JSONFormatterPage() {
       description="Modern JSON explorer with Tree, Table, and Text modes. Edit and search through complex data structures effortlessly."
       categoryName="Developer Tools"
       categoryPath="/developer-tools"
+      slug="json-formatter"
+      about={
+        <div className="space-y-4">
+          <p>
+            A JSON Formatter is an essential tool for developers to make minified or messy JSON data readable. 
+            Our tool goes beyond simple formatting by providing a full <strong>JSON Explorer</strong> experience.
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Tree View:</strong> Visualize nesting and data types with a clean, interactive tree structure.</li>
+            <li><strong>Table View:</strong> Perfect for viewing arrays of objects, allowing you to compare data side-by-side.</li>
+            <li><strong>Live Editing:</strong> Modify values directly in the tree and see changes reflected in real-time.</li>
+            <li><strong>Search & Filter:</strong> Instantly find specific keys or values across thousands of lines of data.</li>
+          </ul>
+          <p>
+            This tool is designed to handle large JSON files efficiently while remaining completely private—all processing happens 
+            locally in your browser.
+          </p>
+        </div>
+      }
+      faq={[
+        {
+          question: "Is my JSON data secure?",
+          answer: "Yes. Your data never leaves your browser. All formatting and editing are performed locally on your device, ensuring complete privacy."
+        },
+        {
+          question: "Can I use this as a JSON Validator?",
+          answer: "Absolutely. The editor will highlight syntax errors in real-time, helping you identify and fix broken JSON structures instantly."
+        },
+        {
+          question: "Does it support large JSON files?",
+          answer: "Yes, the tool is optimized for performance and can handle significantly large JSON objects and arrays without lag."
+        }
+      ]}
     >
       <div className="space-y-6 max-w-7xl mx-auto">
         {error && (

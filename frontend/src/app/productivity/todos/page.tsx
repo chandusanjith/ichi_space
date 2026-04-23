@@ -102,6 +102,7 @@ export default function TodosPage() {
       description="Manage tasks with priorities and due dates"
       categoryName="Productivity"
       categoryPath="/productivity"
+      slug="todos"
     >
       <div className="space-y-6">
         {/* Stats & actions */}

@@ -99,6 +99,7 @@ export default function NotesPage() {
       description="Create and manage personal notes"
       categoryName="Productivity"
       categoryPath="/productivity"
+      slug="notes"
     >
       <div className="space-y-6">
         <div className="flex items-center gap-3">

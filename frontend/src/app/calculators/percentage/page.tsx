@@ -25,6 +25,7 @@ export default function PercentageCalculatorPage() {
       description="Calculate percentages, increases, and decreases"
       categoryName="Calculators"
       categoryPath="/calculators"
+      slug="percentage"
     >
       <Tabs defaultValue="of" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">

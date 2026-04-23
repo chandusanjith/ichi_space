@@ -62,6 +62,7 @@ export default function BMICalculatorPage() {
       description="Calculate your Body Mass Index and health category"
       categoryName="Calculators"
       categoryPath="/calculators"
+      slug="bmi"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>

@@ -37,6 +37,7 @@ export default function GoldPricePage() {
       description="Track live gold prices and calculate value"
       categoryName="Finance"
       categoryPath="/finance"
+      slug="gold-price"
     >
       <div className="space-y-8">
         {/* Price cards */}

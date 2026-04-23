@@ -24,6 +24,7 @@ export default function DiscountCalculatorPage() {
       description="Calculate discounts and savings instantly"
       categoryName="Finance"
       categoryPath="/finance"
+      slug="discount-calculator"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>

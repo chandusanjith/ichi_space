@@ -42,6 +42,7 @@ export default function EMICalculatorPage() {
       description="Calculate your monthly loan EMI with detailed breakdown"
       categoryName="Calculators"
       categoryPath="/calculators"
+      slug="emi"
     >
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <Card className="lg:col-span-3">

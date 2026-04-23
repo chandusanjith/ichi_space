@@ -77,6 +77,7 @@ export default function CurrencyConverterPage() {
       description="Convert between 160+ world currencies with live rates"
       categoryName="Calculators"
       categoryPath="/calculators"
+      slug="currency-converter"
     >
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
         <Card className="lg:col-span-3">

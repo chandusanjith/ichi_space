@@ -60,6 +60,7 @@ export default function DateDifferencePage() {
       description="Calculate the difference between two dates"
       categoryName="Time & Date"
       categoryPath="/time-date"
+      slug="date-difference"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>

@@ -31,6 +31,8 @@ export async function GET() {
     '/developer-tools/json-formatter',
     '/developer-tools/regex-tester',
     '/developer-tools/sql-formatter',
+    '/developer-tools/uuid-generator',
+    '/developer-tools/color-converter',
     
     // File Tools
     '/file-tools/image-compressor',
@@ -55,6 +57,7 @@ export async function GET() {
     '/text-tools/grammar-checker',
     '/text-tools/text-summarizer',
     '/text-tools/word-counter',
+    '/text-tools/lorem-ipsum',
     
     // Time & Date
     '/time-date/countdown-timer',

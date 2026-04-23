@@ -49,6 +49,7 @@ export default function HashGeneratorPage() {
       description="Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes"
       categoryName="Security"
       categoryPath="/security"
+      slug="hash-generator"
     >
       <div className="space-y-8">
         <Card>

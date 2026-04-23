@@ -43,6 +43,7 @@ export default function SQLFormatterPage() {
       description="Format and beautify SQL queries"
       categoryName="Developer Tools"
       categoryPath="/developer-tools"
+      slug="sql-formatter"
     >
       <div className="space-y-6">
         <div className="flex gap-3">

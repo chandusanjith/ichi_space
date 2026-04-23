@@ -80,6 +80,7 @@ export default function AgeCalculatorPage() {
       description="Calculate exact age in years, months, and days"
       categoryName="Calculators"
       categoryPath="/calculators"
+      slug="age"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>

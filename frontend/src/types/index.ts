@@ -8,6 +8,8 @@ export interface Tool {
   keywords: string[];
   isNew?: boolean;
   isPopular?: boolean;
+  seoAbout?: string | React.ReactNode;
+  seoFaq?: Array<{ question: string; answer: string }>;
 }
 
 export type ToolCategory =

@@ -49,6 +49,7 @@ export default function Base64Page() {
       description="Encode and decode Base64 strings"
       categoryName="Developer Tools"
       categoryPath="/developer-tools"
+      slug="base64"
     >
       <div className="space-y-6">
         <div className="flex items-center gap-4">

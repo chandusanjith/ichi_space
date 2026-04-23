@@ -95,6 +95,7 @@ export default function WorldClockPage() {
       description="View current time across multiple time zones"
       categoryName="Time & Date"
       categoryPath="/time-date"
+      slug="world-clock"
     >
       <div className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Files, Upload, FileText, X, Download, Loader2 } from "lucide-react";
+import { PDFDocument } from "pdf-lib";
+
 
 interface PDFFile {
   name: string;
@@ -52,12 +54,38 @@ export default function PDFToolsPage() {
   const handleMerge = async () => {
     if (files.length < 2) return;
     setProcessing(true);
-    // Simulated merge - in production you'd use pdf-lib
-    setTimeout(() => {
+    
+    try {
+      const mergedPdf = await PDFDocument.create();
+      
+      for (const pdfFile of files) {
+        const arrayBuffer = await pdfFile.file.arrayBuffer();
+        const pdf = await PDFDocument.load(arrayBuffer);
+        const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+        copiedPages.forEach((page) => mergedPdf.addPage(page));
+      }
+      
+      const mergedPdfBytes = await mergedPdf.save();
+      const blob = new Blob([mergedPdfBytes as any], { type: "application/pdf" });
+
+      const url = URL.createObjectURL(blob);
+      
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `merged-${new Date().getTime()}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      
       setProcessing(false);
-      alert("PDF merge would use pdf-lib in production. Add 'pdf-lib' package for full functionality.");
-    }, 1500);
+    } catch (err) {
+      console.error("PDF Merge Error:", err);
+      setProcessing(false);
+      alert("An error occurred while merging PDFs. Please check if the files are valid PDFs.");
+    }
   };
+
 
   return (
     <ToolLayout
@@ -65,6 +93,7 @@ export default function PDFToolsPage() {
       description="Merge multiple PDFs or split pages"
       categoryName="File Tools"
       categoryPath="/file-tools"
+      slug="pdf-tools"
     >
       <div className="space-y-8">
         {/* Upload area */}
@@ -135,9 +164,7 @@ export default function PDFToolsPage() {
                   Split PDF
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground text-center">
-                Install <code className="bg-muted px-1 py-0.5 rounded">pdf-lib</code> package for full PDF processing
-              </p>
+
             </CardContent>
           </Card>
         )}

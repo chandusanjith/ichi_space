@@ -52,6 +52,7 @@ export default function BasicCalculatorPage() {
       description="Perform basic arithmetic calculations with a clean interface"
       categoryName="Calculators"
       categoryPath="/calculators"
+      slug="basic"
     >
       <div className="flex justify-center w-full">
         <Card className="w-full max-w-sm p-6 bg-card">

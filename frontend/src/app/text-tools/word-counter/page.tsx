@@ -38,9 +38,10 @@ export default function WordCounterPage() {
   return (
     <ToolLayout
       title="Word Counter"
-      description="Count words, characters, sentences, and reading time"
+      description="Count words, characters, and analyze your text instantly."
       categoryName="Text Tools"
       categoryPath="/text-tools"
+      slug="word-counter"
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">

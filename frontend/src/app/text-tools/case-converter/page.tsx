@@ -44,6 +44,7 @@ export default function CaseConverterPage() {
       description="Convert text between different cases"
       categoryName="Text Tools"
       categoryPath="/text-tools"
+      slug="case-converter"
     >
       <div className="space-y-8">
         <Card>
