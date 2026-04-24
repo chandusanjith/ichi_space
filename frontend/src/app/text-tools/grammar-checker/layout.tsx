@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Grammar Checker - Free Online Tool | Ichi Space',
   description: 'Check and fix grammar mistakes in your text',
-  keywords: 'grammar, spellcheck, proofread, writing',
+  keywords: 'grammar, spellcheck, writingassistant, correction, proofreading',
   openGraph: {
     title: 'Grammar Checker - Free Online Tool | Ichi Space',
     description: 'Check and fix grammar mistakes in your text',

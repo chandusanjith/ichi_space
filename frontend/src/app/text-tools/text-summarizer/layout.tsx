@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Text Summarizer - Free Online Tool | Ichi Space',
   description: 'Summarize long text using AI',
-  keywords: 'summarize, summary, ai, shorten, tldr',
+  keywords: 'summarize, textsummary, tl;dr, shortentext, aisummary',
   openGraph: {
     title: 'Text Summarizer - Free Online Tool | Ichi Space',
     description: 'Summarize long text using AI',

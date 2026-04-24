@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Todo List - Free Online Tool | Ichi Space',
   description: 'Manage tasks with priorities and due dates',
-  keywords: 'todo, task, checklist, to-do, list',
+  keywords: 'todolist, taskmanager, checklist, productivity, planner',
   openGraph: {
     title: 'Todo List - Free Online Tool | Ichi Space',
     description: 'Manage tasks with priorities and due dates',

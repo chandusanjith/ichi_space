@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Image Compressor - Free Online Tool | Ichi Space',
   description: 'Compress images while maintaining quality',
-  keywords: 'image, compress, resize, optimize, photo',
+  keywords: 'compressimage, resizeimage, jpgoptimizer, pngcompressor, webp',
   openGraph: {
     title: 'Image Compressor - Free Online Tool | Ichi Space',
     description: 'Compress images while maintaining quality',

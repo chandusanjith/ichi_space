@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Password Generator - Free Online Tool | Ichi Space',
   description: 'Generate strong, secure passwords',
-  keywords: 'password, generate, secure, strong, random',
+  keywords: 'passwordgenerator, securepassword, randomstring, passwordmanager',
   openGraph: {
     title: 'Password Generator - Free Online Tool | Ichi Space',
     description: 'Generate strong, secure passwords',

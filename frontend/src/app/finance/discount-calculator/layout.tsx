@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Discount Calculator - Free Online Tool | Ichi Space',
   description: 'Calculate discounts and savings instantly',
-  keywords: 'discount, sale, savings, price, deal',
+  keywords: 'discountcalculator, sale, percentoff, shopping, savings',
   openGraph: {
     title: 'Discount Calculator - Free Online Tool | Ichi Space',
     description: 'Calculate discounts and savings instantly',

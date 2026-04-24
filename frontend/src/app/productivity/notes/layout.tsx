@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Notes - Free Online Tool | Ichi Space',
   description: 'Create and manage personal notes',
-  keywords: 'notes, write, memo, notepad',
+  keywords: 'notes, notepad, scratchpad, onlinenotes, texteditor',
   openGraph: {
     title: 'Notes - Free Online Tool | Ichi Space',
     description: 'Create and manage personal notes',

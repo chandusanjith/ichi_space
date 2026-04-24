@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Case Converter - Free Online Tool | Ichi Space',
   description: 'Convert text between different cases',
-  keywords: 'uppercase, lowercase, titlecase, camelcase, snakecase',
+  keywords: 'caseconverter, uppercase, lowercase, titlecase, camelcase, snakecase',
   openGraph: {
     title: 'Case Converter - Free Online Tool | Ichi Space',
     description: 'Convert text between different cases',

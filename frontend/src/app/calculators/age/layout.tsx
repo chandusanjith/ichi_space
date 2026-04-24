@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Age Calculator - Free Online Tool | Ichi Space',
   description: 'Calculate exact age in years, months, and days',
-  keywords: 'age, birthday, birthdate, howold',
+  keywords: 'age, birthday, howoldami, dateofbirth, chronologicalage',
   openGraph: {
     title: 'Age Calculator - Free Online Tool | Ichi Space',
     description: 'Calculate exact age in years, months, and days',

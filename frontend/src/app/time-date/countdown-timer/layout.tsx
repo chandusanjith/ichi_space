@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Countdown Timer - Free Online Tool | Ichi Space',
   description: 'Set a countdown to any future date or event',
-  keywords: 'countdown, timer, event, deadline',
+  keywords: 'countdown, timer, event, timeronline, seconds',
   openGraph: {
     title: 'Countdown Timer - Free Online Tool | Ichi Space',
     description: 'Set a countdown to any future date or event',

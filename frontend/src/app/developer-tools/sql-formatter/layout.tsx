@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'SQL Formatter - Free Online Tool | Ichi Space',
   description: 'Format and beautify SQL queries',
-  keywords: 'sql, format, query, database, beautify',
+  keywords: 'sql, formatter, beautify, minify, sqleditor',
   openGraph: {
     title: 'SQL Formatter - Free Online Tool | Ichi Space',
     description: 'Format and beautify SQL queries',

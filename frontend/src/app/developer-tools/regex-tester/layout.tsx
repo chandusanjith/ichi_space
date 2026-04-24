@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Regex Tester - Free Online Tool | Ichi Space',
   description: 'Test regular expressions with live matching',
-  keywords: 'regex, regularexpression, pattern, match, test',
+  keywords: 'regex, regularexpression, tester, tester, javascriptregex',
   openGraph: {
     title: 'Regex Tester - Free Online Tool | Ichi Space',
     description: 'Test regular expressions with live matching',

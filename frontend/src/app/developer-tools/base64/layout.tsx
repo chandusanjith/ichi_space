@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Base64 Encode/Decode - Free Online Tool | Ichi Space',
   description: 'Encode and decode Base64 strings',
-  keywords: 'base64, encode, decode, binary',
+  keywords: 'base64, decode, encode, binarytotext, string',
   openGraph: {
     title: 'Base64 Encode/Decode - Free Online Tool | Ichi Space',
     description: 'Encode and decode Base64 strings',

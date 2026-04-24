@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { categories } from "@/lib/tools-registry";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { Logo } from "@/components/shared/Logo";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -38,11 +39,8 @@ export function Sidebar({ isOpen, setIsOpen, className }: SidebarProps) {
       )}
     >
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-        <Link href="/" className="flex items-center gap-2 font-semibold" onClick={() => setIsOpen(false)}>
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <PanelsTopLeft className="h-5 w-5" />
-          </div>
-          <span className="text-xl tracking-tight">Ichi Space</span>
+        <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+          <Logo />
         </Link>
         <Button 
           variant="outline" 

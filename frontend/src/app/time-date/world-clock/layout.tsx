@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'World Clock - Free Online Tool | Ichi Space',
   description: 'View current time across multiple time zones',
-  keywords: 'time, timezone, worldclock, utc, gmt',
+  keywords: 'worldclock, timezones, localtime, globaltime, utc',
   openGraph: {
     title: 'World Clock - Free Online Tool | Ichi Space',
     description: 'View current time across multiple time zones',

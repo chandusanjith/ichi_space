@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Currency Converter - Free Online Tool | Ichi Space',
   description: 'Convert between 160+ world currencies with live rates',
-  keywords: 'currency, convert, usd, inr, eur, exchangerate, forex',
+  keywords: 'currency, exchangerate, forex, moneyconverter, usd, eur',
   openGraph: {
     title: 'Currency Converter - Free Online Tool | Ichi Space',
     description: 'Convert between 160+ world currencies with live rates',

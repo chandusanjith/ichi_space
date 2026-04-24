@@ -406,6 +406,125 @@ export const tools: Tool[] = [
       }
     ]
   },
+  {
+    slug: "curl-converter",
+    name: "cURL Converter",
+    description: "Convert cURL commands to Python, JS, and more",
+    category: "developer-tools",
+    icon: "Terminal",
+    path: "/developer-tools/curl-converter",
+    keywords: ["curl", "converter", "python", "fetch", "axios", "requests"],
+    isNew: true,
+    seoAbout: "The cURL Converter is an indispensable tool for developers working with APIs. Instantly translate raw cURL commands from documentation or network tabs into ready-to-use code snippets for Python, Node.js (Fetch/Axios), and other languages. This eliminates manual syntax translation and speeds up integration workflows.",
+    seoFaq: [
+      {
+        question: "Does it support custom headers and data payloads?",
+        answer: "Yes, the converter accurately parses complex cURL commands, including custom HTTP headers, JSON payloads, and form data."
+      }
+    ]
+  },
+  {
+    slug: "svg-to-jsx",
+    name: "SVG to JSX",
+    description: "Convert SVG code into React/Next.js components",
+    category: "developer-tools",
+    icon: "Image",
+    path: "/developer-tools/svg-to-jsx",
+    keywords: ["svg", "jsx", "react", "nextjs", "converter", "component"],
+    isNew: true,
+    seoAbout: "The SVG to JSX Converter streamlines the process of adding custom icons and graphics to your React or Next.js projects. It automatically transforms standard SVG markup into valid JSX syntax, handling camelCase attributes and self-closing tags, so you can copy and paste directly into your component files.",
+    seoFaq: [
+      {
+        question: "Why do I need to convert SVG to JSX?",
+        answer: "React requires standard HTML attributes to be camelCased (e.g., 'stroke-width' becomes 'strokeWidth'). This tool automates that tedious conversion process."
+      }
+    ]
+  },
+  {
+    slug: "jwt-decoder",
+    name: "JWT Decoder",
+    description: "Decode and inspect JSON Web Tokens locally",
+    category: "developer-tools",
+    icon: "Key",
+    path: "/developer-tools/jwt-decoder",
+    keywords: ["jwt", "decoder", "json web token", "auth", "base64", "inspect"],
+    isNew: true,
+    seoAbout: "The JWT Decoder allows developers to inspect the header and payload of JSON Web Tokens instantly. Crucially, all decoding happens entirely within your browser's local environment. Your sensitive tokens are never transmitted to a server, ensuring maximum security and privacy during debugging.",
+    seoFaq: [
+      {
+        question: "Can this tool verify the JWT signature?",
+        answer: "Currently, this tool focuses on decoding the header and payload for inspection purposes. Signature verification requires the secret key, which should not be pasted into web tools."
+      }
+    ]
+  },
+  {
+    slug: "cron-generator",
+    name: "Cron Generator",
+    description: "Generate and translate cron schedule expressions",
+    category: "developer-tools",
+    icon: "Clock",
+    path: "/developer-tools/cron-generator",
+    keywords: ["cron", "generator", "schedule", "expression", "crontab", "parser"],
+    isNew: true,
+    seoAbout: "The Cron Expression Generator takes the guesswork out of scheduling automated tasks. Whether you need a script to run every 5 minutes, at midnight on Tuesdays, or on the first of every month, this tool provides an intuitive interface to generate the exact cron string you need, alongside a human-readable translation.",
+    seoFaq: [
+      {
+        question: "Are there different formats for cron expressions?",
+        answer: "Yes, standard cron uses 5 fields, but some systems (like Quartz) use 6 or 7. Our tool generates standard 5-field expressions compatible with most Linux/Unix systems."
+      }
+    ]
+  },
+  {
+    slug: "env-validator",
+    name: "Env File Validator",
+    description: "Validate and format .env configuration files",
+    category: "developer-tools",
+    icon: "FileCheck",
+    path: "/developer-tools/env-validator",
+    keywords: ["env", "validator", "dotenv", "environment variables", "config"],
+    isNew: true,
+    seoAbout: "The Environment Variable Validator is a secure, client-side utility to check your .env files for syntax errors, missing quotes, or invalid characters. Preventing misconfigured environment variables saves hours of debugging server deployment issues. Your configuration data remains strictly in your browser.",
+    seoFaq: [
+      {
+        question: "Is it safe to paste my production .env file?",
+        answer: "Yes, the validation logic runs entirely locally in your browser. No data is sent over the network."
+      }
+    ]
+  },
+  {
+    slug: "webhook-tester",
+    name: "Webhook Tester",
+    description: "Catch and inspect incoming HTTP webhook requests",
+    category: "developer-tools",
+    icon: "Webhook",
+    path: "/developer-tools/webhook-tester",
+    keywords: ["webhook", "tester", "http", "catch", "inspect", "endpoint"],
+    isNew: true,
+    seoAbout: "The Webhook Tester provides a temporary, unique endpoint URL to catch HTTP requests from third-party services. It's an invaluable tool for developers integrating APIs, allowing you to instantly inspect the headers, query parameters, and JSON payloads of incoming webhooks in real-time.",
+    seoFaq: [
+      {
+        question: "How long is the webhook URL valid?",
+        answer: "The generated endpoint is temporary and typically remains active only while you keep the session open in your browser."
+      }
+    ]
+  },
+  {
+    slug: "ip-lookup",
+    name: "IP & DNS Lookup",
+    description: "Find location and DNS records for any IP or domain",
+    category: "developer-tools",
+    icon: "Network",
+    path: "/developer-tools/ip-lookup",
+    keywords: ["ip", "dns", "lookup", "location", "whois", "network"],
+    isNew: true,
+    seoAbout: "The IP and DNS Lookup tool provides detailed networking insights for any given IP address or domain name. Quickly discover geographic location data, ISP information, and essential DNS records (A, MX, TXT). It's a fundamental utility for network troubleshooting and security analysis.",
+    seoFaq: [
+      {
+        question: "Does it show my current IP address automatically?",
+        answer: "Yes, the tool will automatically detect and display information about your current public IP address upon loading."
+      }
+    ]
+  },
   // File Tools
   {
     slug: "pdf-tools",
@@ -492,34 +611,112 @@ export const tools: Tool[] = [
     ]
   },
   {
-    slug: "fuel-price",
-    name: "Fuel Price Tracker",
-    description: "Track fuel prices across cities",
+    slug: "sip-calculator",
+    name: "SIP Calculator",
+    description: "Calculate mutual fund SIP returns and wealth generation",
     category: "finance",
-    icon: "Fuel",
-    path: "/finance/fuel-price",
-    keywords: ["fuel price", "petrol price", "diesel price", "gasoline", "fuel cost"],
-    seoAbout: "Stay updated with the latest Fuel Prices for petrol and diesel. Our tool provides a convenient way to check current rates, helping you plan your commute and manage your travel expenses more effectively.",
+    icon: "TrendingUp",
+    path: "/finance/sip-calculator",
+    keywords: ["sip", "mutual fund", "investment", "returns", "calculator", "wealth"],
+    isNew: true,
+    seoAbout: "The Systematic Investment Plan (SIP) Calculator helps you estimate the future value of your periodic mutual fund investments. By investing a fixed amount regularly, you can harness the power of compounding to build significant wealth over time. This tool is essential for long-term financial planning and goal setting.",
     seoFaq: [
       {
-        question: "Are these prices national or local?",
-        answer: "We aim to provide the most relevant and up-to-date average market prices for fuel."
+        question: "What is a Systematic Investment Plan (SIP)?",
+        answer: "A SIP is a method of investing a fixed sum regularly in a mutual fund scheme, typically monthly or quarterly, allowing you to buy units at varying market prices."
+      },
+      {
+        question: "How does compounding work in a SIP?",
+        answer: "Compounding means you earn returns not just on your principal amount, but also on the accumulated returns of previous periods, accelerating wealth creation."
       }
     ]
   },
   {
-    slug: "gold-price",
-    name: "Gold Price Tracker",
-    description: "Track live gold prices and trends",
+    slug: "ppf-calculator",
+    name: "PPF Calculator",
+    description: "Estimate your Public Provident Fund maturity amount",
     category: "finance",
-    icon: "Gem",
-    path: "/finance/gold-price",
-    keywords: ["gold price", "silver price", "precious metals", "gold rate", "investment"],
-    seoAbout: "Track the latest Gold and Silver Prices with our real-time precious metals tracker. Whether you're an investor or just curious about market trends, this tool provides current rates in various weights and carats.",
+    icon: "PiggyBank",
+    path: "/finance/ppf-calculator",
+    keywords: ["ppf", "provident fund", "savings", "tax free", "interest", "maturity"],
+    isNew: true,
+    seoAbout: "The Public Provident Fund (PPF) Calculator provides an accurate estimate of your investment's maturity value. PPF is a popular long-term investment option backed by the government, offering attractive interest rates and tax benefits. Use this calculator to plan your retirement or long-term savings strategy effectively.",
     seoFaq: [
       {
-        question: "What carats are supported?",
-        answer: "We provide rates for standard 24K and 22K gold, as well as silver prices."
+        question: "What is the lock-in period for PPF?",
+        answer: "The standard lock-in period for a PPF account is 15 years, though partial withdrawals are permitted under specific conditions after a few years."
+      },
+      {
+        question: "Are PPF returns tax-free?",
+        answer: "Yes, PPF investments fall under the Exempt-Exempt-Exempt (EEE) category, meaning the investment, interest earned, and maturity amount are all tax-free."
+      }
+    ]
+  },
+  {
+    slug: "gst-calculator",
+    name: "GST Calculator",
+    description: "Calculate GST inclusive and exclusive prices instantly",
+    category: "finance",
+    icon: "ReceiptText",
+    path: "/finance/gst-calculator",
+    keywords: ["gst", "tax", "goods and services tax", "inclusive", "exclusive", "calculator"],
+    isNew: true,
+    seoAbout: "The Goods and Services Tax (GST) Calculator makes it simple to determine the final price of a product or service. Whether you need to add GST to a base price (exclusive) or extract the GST amount from a final price (inclusive), this tool provides instant, accurate results for standard tax slabs.",
+    seoFaq: [
+      {
+        question: "What is the difference between GST inclusive and exclusive?",
+        answer: "GST inclusive means the tax is already added to the total price. GST exclusive means the base price does not include tax, which must be added to get the final cost."
+      }
+    ]
+  },
+  {
+    slug: "income-tax",
+    name: "Income Tax Calculator",
+    description: "Compare tax liabilities under Old vs New tax regimes",
+    category: "finance",
+    icon: "Landmark",
+    path: "/finance/income-tax",
+    keywords: ["income tax", "tax calculator", "old regime", "new regime", "deductions"],
+    isNew: true,
+    seoAbout: "The Income Tax Calculator is designed to help salaried individuals and professionals estimate their annual tax liability. It offers a side-by-side comparison of the Old and New tax regimes, helping you make an informed decision on which regime is more beneficial based on your income and eligible deductions.",
+    seoFaq: [
+      {
+        question: "Which tax regime is better?",
+        answer: "It depends on your investments. The Old Regime benefits those with significant deductions (like 80C, HRA), while the New Regime offers lower tax rates but fewer deductions."
+      }
+    ]
+  },
+  {
+    slug: "take-home-salary",
+    name: "Take-Home Salary Calculator",
+    description: "Calculate your net take-home pay from gross salary",
+    category: "finance",
+    icon: "Wallet",
+    path: "/finance/take-home-salary",
+    keywords: ["salary", "take home", "net pay", "gross income", "paycheck", "calculator"],
+    isNew: true,
+    seoAbout: "The Take-Home Salary Calculator provides a clear breakdown of your monthly net income. By inputting your gross salary and standard deductions like provident fund or taxes, you can accurately project how much money will actually reach your bank account each month, aiding in effective personal budgeting.",
+    seoFaq: [
+      {
+        question: "What is the difference between gross and net salary?",
+        answer: "Gross salary is your total compensation before any deductions. Net (take-home) salary is the amount you receive after taxes, provident fund, and other deductions are subtracted."
+      }
+    ]
+  },
+  {
+    slug: "mutual-fund-return",
+    name: "Mutual Fund Return Estimator",
+    description: "Estimate returns on your lumpsum mutual fund investments",
+    category: "finance",
+    icon: "BarChart3",
+    path: "/finance/mutual-fund-return",
+    keywords: ["mutual fund", "lumpsum", "investment", "return", "cagr", "estimator"],
+    isNew: true,
+    seoAbout: "The Mutual Fund Return Estimator helps you project the future value of a one-time (lumpsum) investment. By estimating an expected annual return rate, you can visualize the growth trajectory of your capital over a specified tenure, making it an invaluable tool for lump-sum portfolio planning.",
+    seoFaq: [
+      {
+        question: "Is the estimated return guaranteed?",
+        answer: "No, mutual fund returns are subject to market risks. The calculator provides an estimate based on the assumed annualized return rate you provide."
       }
     ]
   },

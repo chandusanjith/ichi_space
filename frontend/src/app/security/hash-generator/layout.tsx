@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Hash Generator - Free Online Tool | Ichi Space',
   description: 'Generate MD5, SHA-256, and SHA-512 hashes',
-  keywords: 'hash, md5, sha256, sha512, checksum, encrypt',
+  keywords: 'hash, md5, sha256, sha1, checksum, generator',
   openGraph: {
     title: 'Hash Generator - Free Online Tool | Ichi Space',
     description: 'Generate MD5, SHA-256, and SHA-512 hashes',

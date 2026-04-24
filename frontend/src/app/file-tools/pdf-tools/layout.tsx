@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'PDF Merge & Split - Free Online Tool | Ichi Space',
   description: 'Merge multiple PDFs or split pages',
-  keywords: 'pdf, merge, split, combine, document',
+  keywords: 'pdf, mergepdf, splitpdf, compresspdf, pdfeditor',
   openGraph: {
     title: 'PDF Merge & Split - Free Online Tool | Ichi Space',
     description: 'Merge multiple PDFs or split pages',

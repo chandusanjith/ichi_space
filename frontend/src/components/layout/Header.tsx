@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { SmartSearch } from "@/components/search/SmartSearch";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { Logo } from "@/components/shared/Logo";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
@@ -23,6 +24,12 @@ export function Header({ onMenuClick }: HeaderProps) {
         <Menu className="h-5 w-5" />
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
+
+      <div className="flex lg:hidden">
+        <Link href="/">
+          <Logo showText={false} iconClassName="h-8 w-8" />
+        </Link>
+      </div>
       
       <div className="w-full flex items-center justify-between">
         <div className="hidden lg:flex w-[300px]">

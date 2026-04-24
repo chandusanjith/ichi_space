@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Date Difference - Free Online Tool | Ichi Space',
   description: 'Calculate the difference between two dates',
-  keywords: 'date, difference, daysbetween, duration',
+  keywords: 'date, daysbetween, duration, timespan, calculator',
   openGraph: {
     title: 'Date Difference - Free Online Tool | Ichi Space',
     description: 'Calculate the difference between two dates',
