@@ -20,7 +20,9 @@ export type ToolCategory =
   | "file-tools"
   | "security"
   | "finance"
-  | "productivity";
+  | "productivity"
+  | "games"
+  | "creative";
 
 export interface CategoryInfo {
   id: ToolCategory;
